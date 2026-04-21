@@ -247,15 +247,23 @@
     .about-text p { color: var(--gray); margin-bottom: 1.2rem; font-size: 1rem; }
     .about-text p strong { color: var(--white); font-weight: 500; }
     .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    
+    /* Updated stat-card to handle anchor styling */
     .stat-card {
       background: var(--bg2);
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 1.5rem;
       text-align: center;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, transform 0.2s;
+      display: block; /* Important since it's an anchor tag now */
+      text-decoration: none; /* Removes underline from links */
+      cursor: pointer;
     }
-    .stat-card:hover { border-color: var(--cyan); }
+    .stat-card:hover { 
+      border-color: var(--cyan); 
+      transform: translateY(-3px); /* Subtle hover effect to indicate it's clickable */
+    }
     .stat-num { font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; color: var(--cyan); line-height: 1; }
     .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--gray); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.4rem; }
 
@@ -510,11 +518,24 @@
           <a href="mailto:amanaaryan672@gmail.com" class="btn btn-outline" style="display:inline-flex;">✉ amanaaryan672@gmail.com</a>
         </div>
       </div>
+      
       <div class="about-stats reveal">
-        <div class="stat-card"><div class="stat-num">4+</div><div class="stat-label">Production Projects</div></div>
-        <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Certifications</div></div>
-        <div class="stat-card"><div class="stat-num">6K+</div><div class="stat-label">Hackathon Participants Competed Against</div></div>
-        <div class="stat-card"><div class="stat-num">2.26M</div><div class="stat-label">Loan Records Analysed</div></div>
+        <a href="#projects" class="stat-card">
+          <div class="stat-num">4+</div>
+          <div class="stat-label">Production Projects</div>
+        </a>
+        <a href="#certifications" class="stat-card">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Certifications</div>
+        </a>
+        <a href="#zomathon-project" class="stat-card">
+          <div class="stat-num">6K+</div>
+          <div class="stat-label">Hackathon Participants Competed Against</div>
+        </a>
+        <a href="#p2p-project" class="stat-card">
+          <div class="stat-num">2.26M</div>
+          <div class="stat-label">Loan Records Analysed</div>
+        </a>
       </div>
     </div>
   </section>
@@ -585,7 +606,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div id="zomathon-project" class="project-card reveal">
         <div>
           <div class="project-num">Project 02</div>
           <div class="project-name">Zomato KPT Optimizer — Zomathon 2026</div>
@@ -603,7 +624,7 @@
         </div>
       </div>
 
-      <div class="project-card reveal">
+      <div id="p2p-project" class="project-card reveal">
         <div>
           <div class="project-num">Project 03</div>
           <div class="project-name">P2P Credit Risk — Algorithmic Mitigation of Adverse Selection</div>
